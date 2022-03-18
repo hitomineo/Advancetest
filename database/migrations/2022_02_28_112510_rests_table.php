@@ -14,12 +14,12 @@ class RestsTable extends Migration
     public function up()
     {
         Schema::create('rests',function (Blueprint $table) {
-        $table->id()->nullable(false);
-        $table->id('attendance_id')->nullable(false);
+        $table->id();
+        $table->integer('attendance_id')->nullable();
         $table->time('start_time');
         $table->time('end_time');
-        $table->timestamps('created_at');
-        $table->timestamps('updated_at');
+        $table->timestamp('created_at');
+        $table->timestamp('update_at');
     });
 }
 

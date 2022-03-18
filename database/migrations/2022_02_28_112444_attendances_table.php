@@ -14,13 +14,13 @@ class AttendancesTable extends Migration
     public function up()
     {
         Schema::create('attendances',function (Blueprint $table) {
-                $table->id()->nullable(false);
-                $table->user_id()->nullable(false);
+                $table->id();
+                $table->integer('user_id')->nullable();
                 $table->date('date');
                 $table->time('start_time');
                 $table->time('end_time');
-                $table->timestamps('created_at');
-                $table->timestamps('updated_at');
+                $table->timestamp('created_at');
+                $table->timestamp('update_at');
         });
     }
 
@@ -31,6 +31,6 @@ class AttendancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('attendancec');
+        Schema::dropIfExists('attendances');
     }
 }
