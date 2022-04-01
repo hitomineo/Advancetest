@@ -14,7 +14,7 @@ class UserController extends Controller
 {
 
 
-    public function getregister()
+    public function registerView()
     {
         return view('registerView');
     }
