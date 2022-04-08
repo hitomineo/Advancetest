@@ -16,7 +16,11 @@ class UserController extends Controller
 
     public function registerView()
     {
+<<<<<<< HEAD
         return view('layouts.registerView');
+=======
+        return view('registerView');
+>>>>>>> 7d3f5f843ded5f9180b619127033e0b894c79e7a
     }
 //ユーザー新規登録処理
     public function postregister(Request $request)
@@ -32,19 +36,32 @@ class UserController extends Controller
 
 
 //loginページ表示
+<<<<<<< HEAD
     public function loginView()
     {
         return view('layouts.login');
     }
 //ログイン処理
 public function register(AuthRequest $request)
+=======
+    public function getlogin()
+    {
+        return view('login');
+    }
+//ログイン処理
+public function postLogin(AuthRequest $request)
+>>>>>>> 7d3f5f843ded5f9180b619127033e0b894c79e7a
     {
         $email = $request->mail_address;
         $password = $request->password;
     }
 
     //logoutページ
+<<<<<<< HEAD
     public function logout(Request $request)
+=======
+    public function getLogout(Request $request)
+>>>>>>> 7d3f5f843ded5f9180b619127033e0b894c79e7a
     {
         return redirect('/login');
     }
