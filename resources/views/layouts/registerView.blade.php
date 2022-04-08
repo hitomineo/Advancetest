@@ -38,8 +38,7 @@
 
     <div class="register-login">
       <p class="register-login-message">アカウントをお持ちの方はこちらから</p>
-      <div class="blue-btn">
-      <a href="/login" class="register-login-btn">ログイン</a></div>
+      <a href="/login" class="register-login-btn">ログイン</a>
     </div>
   </div>
 
