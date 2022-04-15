@@ -18,6 +18,9 @@ use App\Http\Controllers\UserController;
 Route::get('/register', [UserController::class, 'registerView']);
 //ユーザー新規登録処理
 Route::post('/register', [UserController::class, 'register']);
+
+
+
 //ログインページ表示
 Route::get('/login', [UserController::class, 'loginView']);
 //ログイン処理

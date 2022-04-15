@@ -7,8 +7,9 @@
   height: 80px;
   width: 100%;
   background-color:rgb(255, 255, 255);
-
 }
+
+
 .logo{
   margin-left: 30px;
   font-size: 25px;
@@ -19,8 +20,9 @@
 /*タイトル*/
 .register-content{
   background-color: rgb(245, 245, 245);
- 
 }
+
+
 
 .register-ttl{
   text-align: center;
@@ -34,9 +36,13 @@
   text-align: center;
 }
 
+
+
 .register-item{
   width: 70%;
 }
+
+
 
 .register-item{
   width: 70%;
@@ -50,21 +56,21 @@
 }
 
 .register-btn {
-    width: 70%;
-    height: 40px;
-    background-color: #2525e0;
-    color: white;
-    border: none;
-    text-align: center
+  width: 70%;
+  height: 40px;
+  background-color: #2525e0;
+  color: white;
+  border: none;
+  text-align: center
 }
 
 
 
 
 .register-login{
-    text-align: center;
-    font-size: 70%;
-    padding-bottom: 60px;
+  text-align: center;
+  font-size: 70%;
+  padding-bottom: 60px;
 }
 
 

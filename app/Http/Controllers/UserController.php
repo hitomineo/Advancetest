@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\AuthRequest;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
-
+use UsersTable;
 
 //ユーザー新規登録ページ
-class UserController extends Controller
+    class UserController extends Controller
 {
     public function registerView()
     {
@@ -21,31 +20,31 @@ class UserController extends Controller
 //ユーザー新規登録処理
     public function register(Request $request)
     {
-//データーベースに登録と保存
-        $user = new User();
-        $user->name = $request->name;
-        $user->mail_address = $request->mail_address;
-        $user->password = $request->password;
-        $user->save();
-        return view('login');
-}
+        $this->validate($request, User::$rules);
+
+        $form = $request->all();
+        User::register($form)->save();
+        return redirect('/login');
+    }
 
 
 
 
 
 //loginページ表示
-    public function loginView()
+public function loginView()
     {
         return view('layouts.login');
     }
 
+
 //ログイン処理
 public function login(AuthRequest $request)
-
     {
         return view('login');
     }
+
+
 //ログイン処理
 public function postLogin(AuthRequest $request)
 
@@ -54,9 +53,9 @@ public function postLogin(AuthRequest $request)
         $password = $request->password;
     }
 
-    //logoutページ
 
-    public function logout(Request $request)
+//logoutページ
+public function logout(Request $request)
 
     {
         return redirect('/login');
