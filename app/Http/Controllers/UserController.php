@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\AuthRequest;
-use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
-use UsersTable;
+use Illuminate\Support\Facades\Hash;
 
 //ユーザー新規登録ページ
     class UserController extends Controller
@@ -23,7 +22,12 @@ use UsersTable;
         $this->validate($request, User::$rules);
 
         $form = $request->all();
-        User::register($form)->save();
+        //User::create($form);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' =>Hash::make($request->password),
+        ]);
         return redirect('/login');
     }
 

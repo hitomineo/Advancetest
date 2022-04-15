@@ -33,7 +33,7 @@
 
   <div class="register-content">
     <h2 class="register-ttl">会員登録</h2>
-    
+
     @if (count($errors) > 0)
     <p>入力に問題があります</p>
     @endif
@@ -44,17 +44,17 @@
     </ul>
     <form action="/register" method="POST">
       @csrf
-    </form>
+    
 
 
     <div class="register-lists">
       <div class="register-list"><input class="register-item" type="text" name="name" placeholder="名前" required></div>
-      <div class="register-list"><input class="register-item" type="email" name="mail_address" placeholder="メールアドレス" required></div>
-      <div class="register-list"><input class="register-item" type="password" name="password" id="password" placeholder="パスワード" required></div>
+      <div class="register-list"><input class="register-item" type="email" name="email" placeholder="メールアドレス" required></div>
+      <div class="register-list"><input class="register-item" type="text" name="password" id="password" placeholder="パスワード" required></div>
       <div class="register-list"><input class="register-item" type="password" name="confirm" placeholder="確認用パスワード" required></div>
       <div class="register-list"><input class="register-btn" type="submit" value="会員登録"></a></div>
     </div>
-
+    </form>
 
     <div class="register-login">
       <p class="register-login-message">アカウントをお持ちの方はこちらから</p>

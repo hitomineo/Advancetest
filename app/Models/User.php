@@ -12,8 +12,7 @@ class User extends Model
 
     public static $rules = array(
         'name' => 'required|string|max:200',
-        'email' =>
-        'required|emailstring|max:200',
+        'email' =>'required|email|max:200',
         'password' => 'required'
     );
     public function getDetail()
