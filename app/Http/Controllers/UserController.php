@@ -2,16 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User1;
+use App\Models\User;
+use App\Http\Requests\AuthRequest;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use UsersTable;
 
-class UserController extends Controller
+//ユーザー新規登録ページ
+    class UserController extends Controller
 {
-    public function index()
+    public function registerView()
     {
-        $items =DB::select('select * from users1');
-        return view('index', ['items' => $items]);
+        return view('layouts.registerView');
+    }
+
+
+//ユーザー新規登録処理
+    public function register(Request $request)
+    {
+        $this->validate($request, User::$rules);
+
+        $form = $request->all();
+        User::register($form)->save();
+        return redirect('/login');
+    }
+
+
+
+
+
+//loginページ表示
+public function loginView()
+    {
+        return view('layouts.login');
+    }
+
+
+//ログイン処理
+public function login(AuthRequest $request)
+    {
+        return view('login');
+    }
+
+
+//ログイン処理
+public function postLogin(AuthRequest $request)
+
+    {
+        $email = $request->mail_address;
+        $password = $request->password;
+    }
+
+
+//logoutページ
+public function logout(Request $request)
+
+    {
+        return redirect('/login');
     }
 }
-
